@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="myapp">
+<div ng-controller="myController1">
+    <button ng-click="btn1()">点我</button>
+</div>
+<div ng-controller="myController2">
+    <button ng-click="btn2()">点我</button>
+</div>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    var app1 = angular.module('myApp1',[]);
+    app1.controller('myController1',['$scope',function($scope){
+        $scope.btn1 = function(){
+            console.log(1111111);
+        }
+    }]);
+    var app2 = angular.module('myApp2',[]);
+    app2.controller('myController2',['$scope',function($scope){
+        $scope.btn2 = function(){
+            console.log(222222);
+        }
+    }]);
+    angular.module('myapp',['myApp1','myApp2'])
+</script>
+</body>
+</html>
