@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color:red;
+        }
+        .green{
+            color:green;
+        }
+    </style>
+</head>
+<body ng-app = "myApp">
+<ul ng-controller = "myController">
+    <li ng-repeat = "it in item" data-id="{{it.id}}" ng-class="{red:$even,green:$odd}">
+        <h1>{{it.name}}</h1>
+        <span>{{it.age}}</span>
+    </li>
+</ul>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myController',['$scope',function($scope){
+        $scope.item=[];
+        for(var i = 1;i<10;i++){
+            $scope.item[$scope.item.length]={
+                id:i,
+                name:"xiaohei",
+                age:'10'+i
+            }
+        }
+    }])
+</script>
+</body>
+</html>
