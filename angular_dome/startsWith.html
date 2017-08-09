@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body ng-app = "myApp">
+<input type="text" ng-model="lastname">
+<ul ng-controller = "myController">
+    <li ng-repeat = "it in item track by $index" ng-class="{red:it.startsWith(lastname)}">{{it}}</li>
+</ul>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myController',['$scope',function($scope){
+        $scope.item=['张三','李四','王五','王五'];
+    }])
+</script>
+</body>
+</html>
