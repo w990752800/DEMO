@@ -13,21 +13,24 @@
 <div ng-view></div>
 <script src="//apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
 <script src="//apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+<script type="text/ng-template" id="route_con">
+    <strong>{{title}}</strong>
+</script>
 <script>
     var app = angular.module('app', ['ngRoute']);
     app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider
                 .when('/a', {
                     controller:'acontroller',
-                    templateUrl:'view/a.html'
+                    templateUrl:'route_con'
                 })
                 .when('/b', {
                     controller:'bcontroller',
-                    templateUrl:'view/b.html'
+                    templateUrl:'route_con'
                 })
                 .when('/c', {
                     controller:'ccontroller',
-                    templateUrl:'view/c.html'
+                    templateUrl:'route_con'
                 })
                 .otherwise('/');
     }]);
