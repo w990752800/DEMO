@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由</title>
+</head>
+<body ng-app="app">
+<ul>
+    <li><a href="#/">aaaaaaaaaa</a></li>
+    <li><a href="#/first">fffffffffff</a></li>
+    <li><a href="#/treed">gggggggggg</a></li>
+    <li><a href="#/adsfsdf">gggggggggg</a></li>
+</ul>
+<div ng-view></div>
+<script src="//apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="//apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+<script>
+    angular.module('app',['ngRoute'])
+    .config(['$routeProvider',function($routeProvider){
+        $routeProvider
+        .when('/',{template:'这是首页页面'})
+        .when('/first',{template:'这是2页面'})
+        .when('/treed',{template:'这是3页面'})
+        .otherwise({redirectTo:'/'});
+    }]);
+</script>
+</body>
+</html>
