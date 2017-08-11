@@ -3,7 +3,7 @@
 	//主程序
 	var app = angular.module('myApp', []);
 	//注册一个控制器
-	app.controller('myController', ['$scope', function ($scope) {
+	app.controller('myController', ['$scope','$location', function ($scope,$location) {
 		//给文本框添加一个模型
 		$scope.txt = '';
 		//任务列表也需要一个
@@ -68,6 +68,26 @@
 				$scope.todos[i].completed = now;
 			}
 			now = !now;
+		};
+
+		$scope.selector = {};
+		$scope.$location = $location;
+		$scope.$watch('$location.path()',function(now,old){
+			switch (now){
+				case '/active':
+					$scope.selector = {completed:false};
+					break;
+				case '/completed':
+					$scope.selector = {completed:true};
+					break;
+				default:
+					$scope.selector = {};
+					break;
+			}
+		});
+
+		$scope.equalCompare = function(source,target){
+			return source === target;
 		}
 
 
