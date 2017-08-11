@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="app">
+<ul>
+    <li><a href="#/a">aaaa</a></li>
+    <li><a href="#/b">bbbbb</a></li>
+    <li><a href="#/c">ccccccc</a></li>
+</ul>
+<div ng-view></div>
+<script src="//apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="//apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+<script>
+    var app = angular.module('app', ['ngRoute']);
+    app.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider
+                .when('/a', {
+                    controller:'acontroller',
+                    templateUrl:'view/a.html'
+                })
+                .when('/b', {
+                    controller:'bcontroller',
+                    templateUrl:'view/b.html'
+                })
+                .when('/c', {
+                    controller:'ccontroller',
+                    templateUrl:'view/c.html'
+                })
+                .otherwise('/');
+    }]);
+    app.controller('acontroller',['$scope',function($scope){
+        $scope.title = 'aaaaaaaaaaa';
+    }]);
+    app.controller('bcontroller',['$scope',function($scope){
+        $scope.title = 'bbbbbbbbb';
+    }]);
+    app.controller('ccontroller',['$scope',function($scope){
+        $scope.title = 'ccccccccccccccc';
+    }])
+</script>
+</body>
+</html>
