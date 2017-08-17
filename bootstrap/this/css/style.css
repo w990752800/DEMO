@@ -1,0 +1,326 @@
+/* 首页 */
+*{
+    user-select: none;
+}
+body{
+    background: #fff url(../images/bg_body.png) repeat-x 0 0;
+    color: #292929;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a {
+    color: #292929;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+input:focus, button:focus, a:focus{
+    outline: none;
+}
+.wrap>.container{
+    position: relative;
+    width: 1040px;
+    padding:0 20px;
+    background-color: #fff;
+}
+#header{
+    padding-top:20px;
+}
+#header>.row>div:first-child{
+    margin-top:10px;
+}
+#header>.row>div:nth-child(2){
+    margin-top:20px;
+}
+.location .dropdown>button{
+    border: none;
+    background: none;
+    outline: none;
+    box-shadow: none;
+}
+.location .search-group{
+    border:1px solid red;
+    border-radius:20px;
+}
+.location .search-group>input{
+    width:auto;
+    background: none;
+    outline: none;
+    border:none;
+    box-shadow: none;
+}
+.location .search-group>.dropdown>button{
+    background: none;
+    border:none;
+    outline: none;
+    box-shadow: none;
+}
+.location .search-group>button{
+    background: none;
+    outline: none;
+    border:none;
+    box-shadow: none;
+    padding:6px 10px 0 10px;
+    cursor: pointer;
+}
+#header .user-info{
+    position: absolute;
+    right:0;
+    top:0;
+    background-color: rgba(200,200,200,0.3);
+}
+#header .user-info li{
+}
+#header .nav{
+    border: 1px dashed #eee;
+    border-left:0;
+    border-right:0;
+}
+#header .nav>li>a{
+    text-transform:uppercase;
+    font-size: 15px;
+    color:#A1A0A6;
+}
+#header .nav>li:hover{
+    background: none;
+}
+#header .nav>li>a:hover{
+    color:#333;
+    border-color:#fff;
+}
+#header .nav>li>a:focus, #header .nav>li>a:hover{
+    background: none;
+}
+.container>.banner_top{
+    padding:15px 0;
+}
+@media (min-width: 1024px) {
+    .col-sm-9.main, .col-md-9.home-block {
+        width: 70%;
+        padding-right: 0;
+    }
+}
+@media (min-width: 992px){
+    .col-md-9 {
+        width: 70%;
+    }
+}
+.thum{
+    margin-top:30px;
+    padding-top:20px;
+    position: relative;
+    border-top:1px dashed #e5e5e5;
+}
+.thum .adorn a{
+    position: absolute;
+    top:-15px;
+    left:50%;
+    margin-left:-102px;
+    width: 204px;
+    height: 30px;
+    background: url("../images/tag_more.png");
+}
+.thum .thumbnail{
+    border: 0;
+    margin-bottom:0;
+}
+.thum .thumbnail .caption h3{
+    font-weight: bold;
+    font-size: 18px;
+    margin-top:10px;
+}
+.thum .thumbnail .caption h3 a:hover{
+    text-decoration: none;
+}
+.thum .thumbnail .caption p{
+    color:#999;
+}
+.title{
+    position: relative;
+    padding-bottom: 25px;
+    background: url("../images/adorn_2.png") repeat-x left bottom;
+}
+.title h2{
+    display: inline;
+    border-bottom: 5px solid #F94206;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+.title .arrow{
+    position: absolute;
+    right:5px;
+    top:5px;
+}
+.tabs>.nav>li{
+    margin-right:0;
+}
+.tabs>.nav>li.active a{
+    background: url("../images/point.png") no-repeat center bottom;
+}
+.tabs>.nav>li.active a span{
+    color:#f9421e;
+}
+.tabs>.nav>li>a{
+    padding:10px 9px;
+    border:0;
+    margin-right:0;
+}
+.tabs>.nav>li>a:hover,.tabs>.nav>li>a:focus{
+    border:0;
+}
+.tabs>.nav{
+    padding-bottom:10px;
+}
+.tabs>.nav>li span{
+    display: block;
+    text-align: center;
+    color:#666;
+    line-height: 20px;
+}
+.tabs>.nav>li span:last-child{
+    font-family:"impact";
+    font-size: 24px;
+    font-weight: bold;
+}
+.tabs .media{
+    padding:15px 0;
+    border-bottom:1px dashed #eee;
+    margin-top:0;
+}
+.tabs .media .media-left img{
+    width: 96px;
+    height: 61px;
+    display: block;
+}
+.tabs .media .media-body h4{
+    margin-top:0;
+    font-weight: bold;
+}
+.pic_list .title{
+    background: none;
+    padding-bottom:15px;
+}
+.pic_list>ul>li>a>img{
+    width: 100%;
+    height:auto;
+}
+.pic_list>ul>li{
+    margin-bottom:20px;
+    position: relative;
+}
+.pic_list>ul>li>div{
+    position: absolute;
+    bottom:0;
+    left:0;
+    height:30px;
+    line-height: 30px;
+    width: 100%;
+    background-color: rgba(0,0,0,.6);
+    color:#fff;
+    font-weight: bold;
+}
+.pic_list>ul>li>div>span{
+    padding-left:10px;
+    user-select: none;
+}
+.pic_list>ul>li>div>ul{
+    padding-right:10px;
+}
+@media (min-width: 992px){
+    .col-md-3 {
+        width: 30%;
+    }
+}
+.title_nobg{
+    background: none;
+    padding-bottom:15px;
+}
+.latest_news .nav{
+    margin:18px 0;
+}
+.latest_news>.nav-tabs>li>a{
+    font-size: 24px;
+}
+.latest_news .tab-content .list-unstyled li{
+    border-bottom:1px dashed #eee;
+    padding-bottom:15px;
+    padding-top:8px;
+}
+.latest_news .tab-content .list-unstyled li a{
+    font-size: 18px;
+}
+.text_bg>li>.media>.media-left>span{
+    font-size: 46px;
+    color:#F94206;
+    line-height: 40px;
+}
+.text_bg>li{
+    padding-bottom:40px;
+}
+.article_thum>.thumbnail>a>img{
+    width: 100%;
+}
+.article_thum>.thumbnail>.caption>h4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.article_thum>.thumbnail>.caption>h4 a{
+    font-weight: bold;
+}
+.article_thum .media-heading h4{
+    margin-top:0;
+}
+.article_thum .media-heading h4 a{
+    font-weight: bold;
+}
+.food_con .media .media-body h5{
+    font-weight: bold;
+    margin:0;
+}
+.food_con .media .media-body p{
+    margin-bottom:0;
+}
+.food_con>.list-unstyled>li:first-child{
+    padding-top:0;
+}
+.food_con>.list-unstyled>li{
+    border-bottom:1px dashed #eee;
+    padding:10px 0;
+}
+.food_con>.list-unstyled>li:last-child{
+    border:0;
+}
+
+#slider_con2{
+    width: 100%;
+    height: 460px;
+    background: #000;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+.gallery-top {
+    height: 80%;
+    width: 100%;
+}
+.gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+.gallery-thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-active {
+    opacity: 1;
+}
