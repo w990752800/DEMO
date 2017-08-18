@@ -2,6 +2,9 @@
 *{
     user-select: none;
 }
+html{
+    min-width: 450px;
+}
 body{
     background: #fff url(../images/bg_body.png) repeat-x 0 0;
     color: #292929;
@@ -15,11 +18,14 @@ h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a {
 input:focus, button:focus, a:focus{
     outline: none;
 }
-.wrap>.container{
-    position: relative;
-    width: 1040px;
-    padding:0 20px;
-    background-color: #fff;
+@media (min-width: 1024px){
+    .wrapper > .container, .container {
+        position: relative;
+        width: 1040px;
+        padding:0 20px;
+        background-color: #fff;
+
+    }
 }
 #header{
     padding-top:20px;
@@ -359,8 +365,8 @@ input:focus, button:focus, a:focus{
     padding:40px 0;
     background-color: #24282B;
 }
-#footer .container{
-    width: 1040px;
+#footer *{
+    background-color: #24282B;
 }
 #footer .container p{
     color:#999;
@@ -370,4 +376,18 @@ input:focus, button:focus, a:focus{
 }
 #footer .container .pull-left{
     padding-left:20px;
+}
+
+/* 响应式调整 */
+#header{
+    background-color: #fff;
+}
+#header .row{
+    padding-bottom:15px;
+}
+#header .icon-bar{
+    background: red;
+}
+#header .daohang{
+    border:1px solid red;
 }
