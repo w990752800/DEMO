@@ -1,0 +1,10 @@
+.wrap{
+    background-color: #fff;
+}
+#nav .navbar-brand{
+    padding:0;
+    margin-top:10px;
+}
+#nav{
+    background-color: #131418;
+}
