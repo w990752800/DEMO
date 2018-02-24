@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+11
+<script>
+
+    // 在一个数组里面查找一个 制定的 数值
+
+
+    function binarySearch(data, item) {
+        var h = data.length - 1,
+                l = 0;
+        while (l <= h) {
+            var m = Math.floor((h + l) / 2);
+            if (data[m] == item) {
+                return m;
+            }
+            if (item > data[m]) {
+                l = m + 1;
+            } else {
+                h = m - 1;
+            }
+        }
+
+        return false;
+    }
+    var arr = [34, 12, 5, 123, 2, 745, 32, 4];
+    console.log(binarySearch(arr, 5));
+
+</script>
+
+</body>
+</html>
