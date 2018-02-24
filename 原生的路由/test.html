@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        div {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var iAs = document.getElementsByTagName('a');
+            var aDivs = document.getElementsByTagName('div');
+            for (var i = 0; i < iAs.length; i++) {
+
+                iAs[i].onclick = function () {
+                    var hash = this.dataset.hash;
+
+                    window.location.hash = hash;
+
+
+                    for (var i = 0; i < aDivs.length; i++) {
+
+                        aDivs[i].style.display = 'none';
+
+                        if (hash == aDivs[i].dataset.hash) {
+                            aDivs[i].style.display = 'block';
+                        }
+
+                    }
+
+                }
+            }
+
+            var firstHash = window.location.hash.substring(1) || 'index';
+
+            window.onhashchange = function () {
+                window.location.reload();
+            }
+
+            for (var i = 0; i < aDivs.length; i++) {
+                if (firstHash == aDivs[i].dataset.hash) {
+                    aDivs[i].style.display = 'block';
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li><a data-hash="index" href="javascript:;">首页</a></li>
+    <li><a data-hash="about" href="javascript:;">关于</a></li>
+    <li><a data-hash="more" href="javascript:;">更多</a></li>
+</ul>
+<div data-hash="index">aaaaaaaa</div>
+<div data-hash="about">bbbbbbbb</div>
+<div data-hash="more">cccccccc</div>
+</body>
+</html>
