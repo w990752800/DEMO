@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box1"></div>
+<div class="box2"></div>
+
+<script src="js/TweenMax.min.js"></script>
+<script>
+
+    var t = new TimelineMax();
+
+    t.to(".box1",2,{
+        x : 400
+    })
+    t.to(".box2",2,{
+        x : 400
+    },"-=1.5")
+
+
+</script>
+</body>
+</html>

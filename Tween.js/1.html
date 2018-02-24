@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+
+</div>
+
+<script src="js/TweenMax.min.js"></script>
+<script>
+
+    var t = new TimelineMax();
+    //    t.to("#box",2,{
+    //        left:300,
+    //        top:300,
+    //        width:500,
+    //    })
+    //    t.from("#box",2,{
+    //        left:300
+    //    })
+    //    t.fromTo("#box",2,{
+    //        left:300
+    //    },{
+    //        left:600
+    //    })
+    //    t.to("#box",2,{
+    //        autoAlpha : 0,
+    //       x : 100,
+    //        scale : 0.5
+    //        scaleX : 0.5
+    //       rotationY : 45,
+    //       rotationX : 45,
+    //       rotationZ : 45
+    //       skewX : 45   //斜切
+    //       skewY : 45
+    //    })
+    //    t.set("#box",{
+    //        x:500
+    //    }).to("#box",2,{
+    //        x: 0
+    //    })
+    t.to("#box",2,{
+        x : 400,
+//        ease : Linear.easeIn
+//        ease : Back.easeIn
+//        ease : Bounce.easeIn
+        delay : 3
+    })
+
+
+</script>
+</body>
+</html>

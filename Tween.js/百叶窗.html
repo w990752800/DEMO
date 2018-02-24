@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 1000px;
+            height: 10px;
+            background: url("img/1.jpg");
+            background-repeat:no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+
+<script src="js/TweenMax.min.js"></script>
+<script>
+    var str = ""
+    for(var i = 0;i<100;i++){
+        str = "<div>";
+        document.body.innerHTML += str;
+    }
+    var aDiv = document.getElementsByTagName("div");
+    for(var i = 0;i<aDiv.length;i++){
+        aDiv[i].style.backgroundPositionY = -i*10 + "px";
+    }
+
+    var t = new TimelineMax();
+    t.staggerTo("div",0.2,{
+        rotationX : 90,
+        onComplete : function(){
+            this.target.style.backgroundImage = "url(img/2.jpg)";
+        }
+    },0.1);
+
+</script>
+</body>
+
+</html>

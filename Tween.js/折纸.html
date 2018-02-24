@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 800px;
+            height: 50px;
+            background-color: #f60;
+            border:1px solid #000;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+
+
+</body>
+<script src="js/TweenMax.min.js"></script>
+<script>
+
+    var str = "";
+    for(var i = 0;i<10;i++){
+        str += "<div>";
+        document.body.innerHTML= str;
+    }
+
+    var t = new TimelineMax();
+    t.set("div",{
+        rotationX:240
+    });
+    t.staggerTo("div",0.6,{
+        rotationX:0,
+        top:50
+    },0.1)
+
+
+</script>
+</html>

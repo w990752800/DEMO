@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            margin:100px auto;
+            background-color: #fff;
+        }
+        .box1 div{
+             width: 100px;
+             height: 100px;
+             background-color: #ccc;
+         }
+        .box2 div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box1" id="box">
+    <div></div>
+</div>
+<button>1</button>
+<button>2</button>
+<script src="js/TweenMax.min.js"></script>
+<script>
+    var t = new TimelineMax();
+    t.to(".box1 div",1,{
+        x:200
+    });
+    t.set(".box2 div",{
+        x:0
+    })
+    t.to(".box2 div",1,{
+        x:200
+    });
+
+    var oBtn = document.getElementsByTagName("button");
+    var oBox = document.getElementById("box");
+    for(var i=0;i<oBtn.length;i++){
+        oBtn[i].onclick = function(){
+            oBox.className = "box"+i;
+        }
+    }
+</script>
+</body>
+</html>
