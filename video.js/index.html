@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="video-js.css">
+    <link rel="stylesheet" href="swiper.min.css">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="swiper.min.js"></script>
+    <script src="video.js"></script>
+    <style>
+        .swiper-container {
+            width: 600px;
+            height: 300px;
+        }
+
+        /*.video-js .vjs-title-bar {*/
+            /*background: rgba(0, 0, 0, 0.5);*/
+            /*color: white;*/
+            /*display: none;*/
+            /*font-size: 2em;*/
+            /*padding: .5em;*/
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*left: 0;*/
+            /*width: 100%;*/
+        /*}*/
+
+        /*.video-js.vjs-paused.vjs-has-started .vjs-title-bar,*/
+        /*.video-js.vjs-user-active.vjs-has-started .vjs-title-bar {*/
+            /*display: block;*/
+        /*}*/
+        .video_link{
+            display: block;
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a videohref="movie.mp4" class="video_link"><img  src="../images/xxx.jpg"/></a>
+        </div>
+        <div class="swiper-slide">
+            <a videohref="111.mp4" class="video_link"><img  src="../images/xxx.jpg"/></a>
+        </div>
+        <div class="swiper-slide">
+            <a videohref="movie.mp4" class="video_link"><img  src="../images/xxx.jpg"/></a>
+        </div>
+        <div class="swiper-slide">
+            <a videohref="111.mp4" class="video_link"><img  src="../images/xxx.jpg"/></a>
+        </div>
+        <div class="swiper-slide">
+            <a videohref="movie.mp4" class="video_link"><img  src="../images/xxx.jpg"/></a>
+        </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- 如果需要滚动条 -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">-->
+    <!--开始演示模态框-->
+<!--</button>-->
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    模态框（Modal）标题
+                </h4>
+            </div>
+            <div class="modal-body">
+                <video id="my-player" class="video-js vjs-default-skin vjs-fluid" poster="http://vjs.zencdn.net/v/oceans.png" width="375" height="200" controls preload="none"
+                       data-setup='{ "html5" : { "nativeTextTracks" : false } }'>
+                    <source type="video/mp4" src="1">
+                </video>
+            </div>
+            <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">关闭-->
+                <!--</button>-->
+                <!--<button type="button" class="btn btn-primary">-->
+                    <!--提交更改-->
+                <!--</button>-->
+            <!--</div>-->
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<a data-toggle="modal" href="#myModal" class="modal-click">发动演示模态框</a>
+
+<script>
+//    var Component = videojs.getComponent('Component');
+//    var TitleBar = videojs.extend(Component, {
+//
+//        constructor: function (player1, options) {
+//
+//            Component.apply(this, arguments);
+//
+//            if (options.text) {
+//                this.updateTextContent(options.text);
+//            }
+//        },
+//
+//        createEl: function () {
+//            return videojs.createEl('div', {
+//                className: 'vjs-title-bar'
+//            });
+//        },
+//
+//        updateTextContent: function (text) {
+//
+//            if (typeof text !== 'string') {
+//                text = 'Title Unknown';
+//            }
+//
+//            videojs.emptyEl(this.el());
+//            videojs.appendContent(this.el(), text);
+//        }
+//    });
+//
+//    videojs.registerComponent('TitleBar', TitleBar);
+
+//    var player1 = videojs('my-player1');
+//    var player2 = videojs('my-player2');
+//    var player3 = videojs('my-player3');
+//    var player4 = videojs('my-player4');
+//    var player5 = videojs('my-player5');
+
+//    player.addChild('TitleBar', {text: 'The Title of The Video!'});
+
+</script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+        autoplayDisableOnInteraction: false,
+        direction: "horizontal",
+
+        // 如果需要分页器
+        pagination: '.swiper-pagination',
+
+        // 如果需要前进后退按钮
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+
+        // 如果需要滚动条
+        scrollbar: '.swiper-scrollbar',
+    })
+
+    $(".swiper-container .swiper-slide-active").mouseenter(function () {//滑过悬停
+        mySwiper.stopAutoplay();//mySwiper 为上面你swiper实例化的名称
+
+    }).mouseleave(function () {//离开开启
+        mySwiper.startAutoplay();//mySwiper 为上面你swiper实例化的名称
+//        player.pause();
+    });
+
+
+//    $(".swiper-button-prev").click(function () {
+//        player.pause();
+//    })
+//    $(".swiper-button-next").click(function () {
+//        player.pause();
+//    })
+//    var oldPlayer = document.getElementById('my-player');
+//    videojs(oldPlayer).dispose();
+    $(".video_link").click(function() {
+
+      var myPlayer = videojs('my-player');
+        var videoUrl = $(this).attr("videohref");
+        console.log(videoUrl)
+        videojs("my-player", {}, function() {
+//            window.myPlayer = this;
+//            $("#myModal #my-player source").attr("src", videoUrl);
+//            var mianSrc = $("#modal #my-player source").attr("src");
+//            console.log(mianSrc)
+//            console.log(videoUrl)
+//            console.log(myPlayer);
+            this.src(videoUrl);
+            this.load();
+            this.play();
+        });
+
+        $(".modal-click").click();
+
+    });
+    // 模态窗消失时，关闭视频
+    $('#myModal').on('hidden.bs.modal', function() {
+        myPlayer.pause();
+//        videojs(oldPlayer).dispose();
+    });
+
+
+</script>
+</body>
+</html>
