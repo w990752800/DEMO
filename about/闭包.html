@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+
+<script>
+
+    var getNum;//------------------------1
+    function getCounter() { // ----------2
+        var n = 1;
+        var inner = function () { return n++; }
+        return inner;
+    }
+
+    getNum = getCounter();//------------3
+    console.log(getNum()); //1 ---------4
+    console.log(getNum()); //2 ---------5
+
+</script>
+
+</body>
+</html>
