@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app" class="container">
+    <div class="modal-body">
+        <form role="form">
+
+            <div class="form-group">
+
+                <label for="username">用户名：</label>
+                <input id="username" type="text" placeholder="用户名" class="form-control" v-model="username1">
+
+            </div>
+            <div class="form-group">
+
+                <label for="age">年龄：</label>
+                <input id="age" type="text" placeholder="年龄" class="form-control" v-model="age1">
+
+            </div>
+            <div class="form-group">
+
+                <button class="btn btn-primary" @click.prevent="add()">添加</button>
+                <button class="btn btn-danger" type="reset">重置</button>
+
+            </div>
+
+        </form>
+        <table class="table table-bordered table-hover">
+            <tr class="text-center">
+                <th>序号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>操作</th>
+            </tr>
+            <tr class="text-center" v-for="(item,index) in msg" v-bind:itemId="index">
+                <td>{{index+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td><button class="btn btn-primary" @click.prevent="remove">删除</button></td>
+            </tr>
+            <tr v-show="msg.length!=0">
+                <td colspan="4">
+                    <button class="btn btn-danger" @click.prevent="removeAll">删除全部</button>
+                </td>
+            </tr>
+            <tr v-show="msg.length==0">
+                <td colspan="4" class="text-center text-muted">
+                    暂无数据...
+                </td>
+            </tr>
+        </table>
+        <!--&lt;!&ndash; Modal &ndash;&gt;-->
+        <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
+            <!--<div class="modal-dialog" role="document">-->
+                <!--<div class="modal-content">-->
+                    <!--<div class="modal-header">-->
+                        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                    <!--</div>-->
+                    <!--<div class="modal-body">-->
+                        <!--确定删除吗？？-->
+                    <!--</div>-->
+                    <!--<div class="modal-footer">-->
+                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">确定</button>-->
+                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+
+
+<!--<script src="jquery.min.js"></script>-->
+<!--<script src="bootstrap.min.js"></script>-->
+<script>
+
+    window.onload = function(){
+
+        var app = new Vue({
+
+            el: '#app',
+            data: {
+                msg:[],
+                username1:'',
+                age1:'',
+                itemId:-100
+            },
+            methods: {
+                add(){
+                    if(this.username1 != ''){
+                        this.msg.push({name:this.username1,age:this.age1})
+                    }
+                    this.username1 = '';
+                    this.age1="";
+                },
+                remove(){
+                    this.msg.splice(this.itemId,1)
+                },
+                removeAll(){
+                    this.msg = [];
+                }
+            }
+
+        })
+
+    }
+
+</script>
+</body>
+</html>

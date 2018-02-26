@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <input type="button" value="点击" @mouseover="add">
+
+    <ul>
+        <li v-for="item in msg">{{item}}</li>
+    </ul>
+
+</div>
+<script>
+    new Vue({
+
+        el:'#app',
+        data:{
+            msg:['a','b','c']
+        },
+        methods:{
+            add(){
+                this.msg.push('d')
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
