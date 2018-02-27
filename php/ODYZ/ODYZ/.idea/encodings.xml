@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/detail/data/headerImg.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/data/stuVerify.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/data/stuVerify2.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/data/upheadImg.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/accountInfo.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/addorder.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/changePwd.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/detail.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/fusioncharts.charts.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/integral.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/myOrder.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/productlist.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/public.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/report.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/sellerInfo.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/stuVify.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/detail/js/userCenter.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/css/out.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/data/completeOrder.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/data/downShelf.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/data/incomeChart.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/data/lookTradeRecord.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/data/pub.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/data/pubImg1.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/data/takeOrder.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/data/updateProduct.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/js/changePub.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/js/incomeChart.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/js/lookTradeRecord.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/js/pubProduct.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/js/wantBuy.js" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
