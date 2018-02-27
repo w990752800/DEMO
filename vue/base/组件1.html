@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子组件获取父组件的数据</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+
+    <aaa></aaa>
+</div>
+
+<template id="a">
+    <div>
+        1111=>{{msg}}
+        <bbb :m="msg" :my-msg="msg2"></bbb>
+    </div>
+</template>
+
+<script>
+    //局部组件
+    var vm = new Vue({
+        el:'#app',
+        components:{
+            'aaa':{
+                data(){
+                    return {
+                        msg:'wnf',
+                        msg2:111
+                    }
+                },
+                template:'#a',
+                components:{
+                    'bbb':{
+                        props:['m','myMsg'],
+                        template:'<h3>我是子组件=>{{m}} {{myMsg}}</h3>'
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

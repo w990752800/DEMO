@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <my-aaa></my-aaa>
+
+</div>
+
+<template id="aaa">
+    <div>
+        <h2>今天星期天</h2>
+        <div>
+            hello vue
+        </div>
+    </div>
+</template>
+
+<script>
+    //局部组件
+    var vm = new Vue({
+        el:'#app',
+        components:{
+            'my-aaa':{
+                data(){
+                    return {
+                        msg:'我是局部的'
+                    }
+                },
+                methods:{
+                  changed(){
+                      this.msg = '我改变了'
+                  }
+                },
+                template:'#aaa'
+            }
+        }
+    })
+</script>
+</body>
+</html>

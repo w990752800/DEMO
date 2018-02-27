@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <button @click="a='aaa'">按钮1</button>
+    <button @click="a='bbb'">按钮2</button>
+
+    <component :is="a"></component>
+
+</div>
+
+
+<script>
+    //局部组件
+    var vm = new Vue({
+        el:'#app',
+        data:{
+          a:'aaa'
+        },
+        components:{
+            "aaa":{
+                template:'<h2>我是aaa</h2>'
+            },
+            'bbb':{
+                template:'<h2>我是bbb</h2>'
+            }
+        }
+    })
+</script>
+</body>
+</html>
