@@ -16,7 +16,7 @@
 <template id="a">
     <div>
         1111=>{{msg}}
-        <bbb :m="msg" :my-msg="msg2"></bbb>
+        <bbb @child-msg="get"></bbb>
     </div>
 </template>
 
@@ -32,11 +32,25 @@
                         msg2:111
                     }
                 },
+                methods:{
+                  get(msg){
+                      alert(msg);
+                  }
+                },
                 template:'#a',
                 components:{
                     'bbb':{
-                        props:['m','myMsg'],
-                        template:'<h3>我是子组件=>{{m}} {{myMsg}}</h3>'
+                        data(){
+                          return {
+                              msg2:'dddd'
+                          }
+                        },
+                        methods:{
+                            send(){
+                                this.$emit('child-msg',this.msg2)
+                            }
+                        },
+                        template:'<h3 @click="send">我是子组件=>{{m}} {{myMsg}}</h3>'
                     }
                 }
             }
