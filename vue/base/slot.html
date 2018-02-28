@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <aaa>
+        <ul>
+            <li>11</li>
+            <li>11</li>
+            <li>11</li>
+            <li>11</li>
+        </ul>
+    </aaa>
+</div>
+
+<template id="bbb">
+    <div>
+        <h1>woshi</h1>
+        <slot></slot>
+        <h2>wnf</h2>
+    </div>
+</template>
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'wnf'
+        },
+        components:{
+            'aaa':{
+                template:'#bbb'
+            }
+        }
+
+    })
+</script>
+
+</body>
+</html>
