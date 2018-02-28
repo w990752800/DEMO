@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.min.js"></script>
+</head>
+<body>
+<template id="home">
+    <div>我是主页</div>
+</template>
+<template id="list">
+    <div>我是列表页</div>
+</template>
+
+<div id="app">
+    <div>
+        <router-link to="/home">主页</router-link>
+        <router-link to="/list">列表页</router-link>
+    </div>
+    <div>
+        <router-view></router-view>
+    </div>
+</div>
+<script>
+    const Home = {
+        template:'#home'
+    }
+    const List = {
+        template:'#list'
+    }
+    const routers = [
+        {path:'/home',component:Home},
+        {path:'/list',component:List},
+        {path:'*',redirect:'/home'}
+    ]
+    var router = new VueRouter({
+        routes:routers
+    })
+    var vm = new Vue({
+        router,
+        el:'#app',
+        data:{},
+
+    })
+</script>
+</body>
+</html>
