@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+
+</div>
+<template id="aaa">
+    <div>
+        <div>aaa</div>
+    </div>
+</template>
+
+<template id="bbb">
+    <div>
+        <div>bbb</div>
+    </div>
+</template>
+<script>
+    //全局组件
+    var  Home = {
+        template:'#aaa'
+    }
+    Vue.component('my-aaa',Home)
+    var vm = new Vue({
+        el:'#app',
+        data:{
+
+        },
+        //局部组件
+        components:{
+            'my-bbb':{
+                data(){
+                    return {
+                        msg:'bbb'
+                    }
+                },
+                template:'#bbb'
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
