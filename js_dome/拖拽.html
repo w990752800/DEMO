@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js实现拖拽</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box"></div>
+
+<script>
+
+    var oBox = document.getElementById('box');
+    box.onmousedown = function (ev) {
+        var ev = event || window.event;
+        var disx = ev.clientX - this.offsetLeft;
+        var disy = ev.clientY - this.offsetTop;
+        document.onmousemove = function (ev) {
+            var ev = event || window.event;
+            var l = ev.clientX - disx;
+            var t = ev.clientY - disy;
+            box.style.top = t + 'px';
+            box.style.left = l + 'px';
+        }
+        document.onmouseup = function (ev) {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
