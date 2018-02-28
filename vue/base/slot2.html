@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <aaa>
+        <ul slot="ul-slot">
+            <li>11</li>
+            <li>11</li>
+            <li>11</li>
+            <li>11</li>
+        </ul>
+        <ol slot="ol-slot">
+            <li>2</li>
+            <li>33</li>
+            <li>555</li>
+        </ol>
+    </aaa>
+</div>
+
+<template id="bbb">
+    <div>
+        <h1>woshi</h1>
+        <slot name="ul-slot"></slot>
+        <slot name="ol-slot"></slot>
+        <h2>wnf</h2>
+    </div>
+</template>
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'wnf'
+        },
+        components:{
+            'aaa':{
+                template:'#bbb'
+            }
+        }
+
+    })
+</script>
+
+</body>
+</html>

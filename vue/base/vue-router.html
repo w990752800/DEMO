@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>router</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>hello vue</h1>
+    <router-link to="/">首页</router-link>
+    <router-link to="/news">新闻业</router-link>
+    <router-link to="/list">列表页</router-link>
+    <div>
+        <router-view></router-view>
+    </div>
+
+</div>
+<script>
+    const Index = {
+        template:'<div>首页。。。。</div>'
+    };
+    const News = {
+        template:'<div>新闻业。。。。</div>'
+    };
+    const List = {
+        template:'<div>列表页。。。。</div>'
+
+    }
+
+
+    const routers = [
+        {path:'/',component:Index},
+        {path:'/news',component:News},
+        {path:'/list',component:List}
+    ]
+    const router = new VueRouter({
+        routers
+    })
+    var vm = new Vue({
+        router,
+        data:{
+
+        },
+        methods:{
+
+        }
+
+    }).$mount('#app')
+
+</script>
+</body>
+</html>
