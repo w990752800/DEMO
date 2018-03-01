@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子路由嵌套</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <my-aaa></my-aaa>
+
+</div>
+
+<template id="aaa">
+    <div>
+        <ul>
+            <li><router-link to="/home">首页</router-link></li>
+            <li><router-link to="/list">列表</router-link></li>
+        </ul>
+        <div>
+            <router-view></router-view>
+        </div>
+    </div>
+</template>
+
+<template id="home">
+    <div>
+        我是主页
+    </div>
+</template>
+
+<template id="list">
+    <div>
+        我是列表页
+        <ul>
+            <li><router-link to="/detail">内容也</router-link></li>
+        </ul>
+        <div><router-view></router-view></div>
+    </div>
+</template>
+<template id="detail">
+    <div>
+        我是内容也
+    </div>
+</template>
+
+<script>
+    var Home = {
+        template:'#home'
+    };
+    var List = {
+        template:'#list'
+    }
+    var Detail={
+        template:'#detail'
+    }
+
+    var routes = [
+        {path:'/home',component:Home},
+        {path:"/list",component:List,
+            children:[
+                {path:'/detail',component:Detail}
+            ]
+        },
+        {path:'*',redirect:'/home'}
+    ]
+
+    var router = new VueRouter({
+        routes:routes
+    })
+
+    var vm = new Vue({
+        router,
+        el:"#app",
+        components:{
+            'my-aaa':{
+                template:'#aaa'
+            }
+        }
+    })
+</script>
+</body>
+</html>
