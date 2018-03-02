@@ -224,6 +224,6 @@ $('.pull-menu li').on('click','a',function (e) {
 });
 $('#top-bar').on('click','.exit',function(){
     sessionStorage['loginName']="";
-    location.href='index.html';
+    location.href='01基础.html';
     console.log(sessionStorage['loginName']);
 });

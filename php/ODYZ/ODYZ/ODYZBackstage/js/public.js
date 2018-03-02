@@ -137,7 +137,7 @@ $('section .title').on('click','.manager',function(){
 
 $('section .base').on('click','.exit',function(){
     sessionStorage['loginName']="";
-    location.href='index.html';
+    location.href='01基础.html';
     console.log(sessionStorage['loginName']);
 });
 $('section .base').on('click','.reload',function(){
@@ -147,7 +147,7 @@ $('section .base').on('click','.last',function(){
     history.go(-1);
 });
 $('section .base').on('click','.index',function(){
-    location.href='index.html';
+    location.href='01基础.html';
 });
 //修改密码
 //$('div#main .myApp').on('click','.changePwd a',function(){
