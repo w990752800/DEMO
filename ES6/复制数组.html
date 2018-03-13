@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 三个点 ...
+    var arr = [1,2,3];
+    var arr2 = [...arr];
+    // Array.from
+    var arr = [1,2,3];
+    var arr2 = Array.from(arr);
+    //实参的集合
+    function aaa(...argus) {
+        argus.push(5);
+        console.log(argus);
+    }
+    aaa(1,2,3)
+
+
+</script>
+</body>
+</html>
