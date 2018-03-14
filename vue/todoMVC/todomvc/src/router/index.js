@@ -20,8 +20,12 @@ export default new Router({
     {
       path:'/time-entries',
       name:'TimeEntries',
-      component:TimeEntries
-
+      component:TimeEntries,
+      children : [{
+        path : 'log-time',
+        // 懒加载
+        component : resolve => require(['@/components/LogTime.vue'],resolve),
+      }]
     }
   ]
 })
