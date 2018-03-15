@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // var p = new Promise(function(resolve,reject){
+    //     resolve(1);
+    // }).then(function(value){
+    //     console.log(value);
+    // },function(){
+    //
+    // })
+    //
+    //原生ajax
+    function ajax(url,succ,fail){
+        var xhr = new XMLHttpRequest()
+        xhr.open('get',url,true);
+        xhr.send();
+        xhr.readystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                succ(xhr.responseText);
+            }else{
+                fail&&fail(xhr.status);
+            }
+        }
+    }
+
+    var oBtn = document.getElementById('btn');
+    var oBox = document.getElementById('box');
+
+    oBtn.onclick = function(){
+        let pq = new Promist(function(resolve,reject){
+            ajax('a.txt',function(str){
+                resolve(str)
+            },function(){
+                reject(str)
+            })
+        })
+
+        pq.then(function(str){
+            oBox.innerHTML = str;
+        },function(str){
+            oBox.innerHTML = str;
+        })
+
+    }
+
+
+
+
+
+
+</script>
+<button id="btn">点击</button>
+<div id="box"></div>
+</body>
+</html>
