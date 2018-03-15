@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .on {
+            background-color: red;
+            color: #fff;
+        }
+
+        .box div {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid #333;
+            display: none;
+        }
+    </style>
+    <script>
+
+        //原生的
+        // window.onload = function(){
+        //     var oBox = document.getElementById('box');
+        //     var aBtn = oBox.getElementsByTagName('input')
+        //     var aDiv = oBox.getElementsByTagName('div');
+        //     for(var i = 0;i<aBtn.length;i++){
+        //         aBtn[i].index = i;
+        //         aBtn[i].onclick = function(){
+        //             for(var j = 0;j<aBtn.length;j++){
+        //                 aBtn[j].className = '';
+        //                 aDiv[j].style.display = 'none';
+        //             }
+        //             aBtn[this.index].className = 'on';
+        //             aDiv[this.index].style.display = 'block';
+        //         }
+        //     }
+        //
+        // }
+        // //面向对象
+        // function Tab(id) {
+        //     this.oBox = document.getElementById(id);
+        //     this.aBtn = this.oBox.getElementsByTagName('input');
+        //     this.aDiv = this.oBox.getElementsByTagName('div');
+        //     this.init(this);
+        // }
+        //
+        // Tab.prototype.init = function (that) {
+        //     for (var i = 0; i < that.aBtn.length; i++) {
+        //         that.aBtn[i].index = i;
+        //         that.aBtn[i].onclick = function () {
+        //             for (var j = 0; j < that.aBtn.length; j++) {
+        //                 that.aBtn[j].className = '';
+        //                 that.aDiv[j].style.display = 'none';
+        //             }
+        //             that.aBtn[this.index].className = 'on';
+        //             that.aDiv[this.index].style.display = 'block';
+        //         }
+        //     }
+        // }
+        //
+        // window.onload = function () {
+        //    new Tab('box');
+        // }
+        //es6
+        class Tab{
+            constructor(id){
+                this.oBox = document.getElementById(id);
+                this.aBtn = this.oBox.getElementsByTagName('input');
+                this.aDiv = this.oBox.getElementsByTagName('div');
+                this.iNow = 0;
+                this.init();
+            }
+            init(){
+                for(let i = 0;i<this.aBtn.length;i++){
+                    this.aBtn[i].onclick = function(){
+                        this.hide();
+                        this.show(i);
+                    }.bind(this)
+                }
+            }
+            hide(){
+                for(let j = 0;j<this.aBtn.length;j++){
+                    this.aBtn[j].className = '';
+                    this.aDiv[j].style.display = 'none';
+                }
+            }
+            show(index){
+                this.aBtn[index].className = 'on';
+                this.aDiv[index].style.display = 'block';
+            }
+        }
+
+        class Tab2 extends Tab{
+            constructor(id){
+                super(id);
+                setInterval(this.next.bind(this),1000)
+            }
+            next(){
+                this.iNow++;
+                if(this.iNow>=this.aBtn.length)this.iNow=0;
+                this.hide()
+                this.show(this.iNow);
+            }
+        }
+
+        window.onload = function(){
+            new Tab('box')
+            new Tab2('box2')
+        }
+
+    </script>
+</head>
+<body>
+
+<div id="box" class="box">
+    <input type="button" value="111" class="on">
+    <input type="button" value="222">
+    <input type="button" value="333">
+    <div style="display: block">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+<div id="box2" class="box">
+    <input type="button" value="111" class="on">
+    <input type="button" value="222">
+    <input type="button" value="333">
+    <div style="display: block">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+
+</body>
+</html>

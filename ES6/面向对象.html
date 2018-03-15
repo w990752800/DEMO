@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //之前的写法
+    function Penson(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Penson.prototype.showName = function(){
+        return(this.name)
+    }
+    Penson.prototype.showAge = function(){
+        return(this.age)
+    }
+    var p1 = new Penson('wnf',12);
+    alert(p1.showName())
+    //继承
+    function Worker(name,age){
+        Penson.apply(this,arguments);
+    }
+    Worker.prototype = new Penson();
+
+
+    //es6的写法
+    class Penson{
+        constructor(name,age){
+            this.name= name;
+            this.age = age;
+        }
+        showName(){
+            return this.name;
+        }
+        showAge(){
+            return this.age();
+        }
+    }
+
+    var p1 = new Penson('wnf',12)
+    console.log(p1.showName());
+    //继承
+    class Worker extends Penson{
+        super(name,age);
+        constructor(name,age,job='jjj'){
+            this.job = job;
+        }
+        showJob(){
+            return this.job;
+        }
+    }
+    var w1 = new Worker('w',13)
+
+
+
+</script>
+
+</body>
+</html>
