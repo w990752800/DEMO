@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //普通的for in
+    var arr = ['apper','banner','pear','organg']
+    for(var i in arr){
+        console.log(i);
+    }
+    //es6 新增的for of
+    for(var j of arr){
+        console.log(j);
+    }
+    //不能遍历json
+    // var json = {
+    //     'a':'app',
+    //     'b':'banner',
+    //     'c':'cilcil',
+    //     'd':'dildil'
+    // }
+    //
+    // for(var e of json){
+    //     console.log(e);
+    // }
+</script>
+
+</body>
+</html>
