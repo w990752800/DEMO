@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" scroll-top='60'>
+    <view style='width:100%;display:flex;background:red;height:1000px;'>
+      
+    </view>
+  </scroll-view>
+</view>

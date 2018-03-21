@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <text class='caiquan'>猜拳游戏</text>
+  <view>
+    <image class='userinfo' src='{{imagePath}}' background-size="cover"></image>
+    <button bindtap='guess'>{{title}}</button>
+  </view>
+</view>
