@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            margin:100px auto;
+            width: 500px;
+        }
+        .app{
+            width:0;
+            height: 30px;
+            background-color: lightblue;
+        }
+    </style>
+    <script>
+
+        // setInterval
+        // window.onload = function(){
+        //
+        //     var oApp = document.querySelector('.app');
+        //     var oBtn = document.getElementsByTagName('button')[0];
+        //     oApp.style.width = '0';
+        //     var timer;
+        //     oBtn.onclick = function(){
+        //         clearInterval(timer);
+        //         timer = setInterval(function(){
+        //             if(parseInt(oApp.offsetWidth) < 500){
+        //                 oApp.style.width=parseInt(oApp.offsetWidth)+5+'px';
+        //                 oApp.innerHTML = parseInt(oApp.offsetWidth/5)+ '%';
+        //             }else{
+        //                 clearInterval(timer);
+        //             }
+        //         },16)
+        //     }
+        // }
+
+
+        // setTimeout
+
+        // window.onload = function(){
+        //
+        //     var oApp = document.querySelector('.app');
+        //     var oBtn = document.getElementsByTagName('button')[0];
+        //     oApp.style.width = '0'
+        //     var timer= null;
+        //     oBtn.onclick = function(){
+        //         clearTimeout(timer);
+        //         timer = setTimeout(function fn(){
+        //
+        //             if(parseInt(oApp.offsetWidth) < 500 ){
+        //                 oApp.style.width = parseInt(oApp.offsetWidth) + 5 + 'px';
+        //                 oApp.innerHTML = parseInt(oApp.offsetWidth/5) + '%';
+       //                  setTimeout(fn,16);
+        //             }else{
+        //                 clearTimeout(timer);
+        //             }
+        //
+        //         },16)
+        //
+        //     }
+        //
+        // }
+
+        //requestAnimationframe
+
+        window.onload = function(){
+            var oApp = document.querySelector('.app');
+            var oBtn = document.getElementsByTagName('button')[0];
+            oApp.style.width = '0';
+            var timer = null;
+            oBtn.onclick = function(){
+                cancelAnimationFrame(timer);
+
+                timer = requestAnimationFrame(function fn(){
+
+                    if(parseInt(oApp.offsetWidth) < 500 ){
+                        oApp.style.width = parseInt(oApp.offsetWidth) + 5 + 'px';
+                        oApp.innerHTML = parseInt(oApp.offsetWidth/5) + '%';
+                        timer = requestAnimationFrame(fn)
+                    }else{
+                        cancelAnimationFrame(timer);
+                    }
+                })
+            }
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="app">0%</div>
+    <button>点击</button>
+</div>
+</body>
+</html>
