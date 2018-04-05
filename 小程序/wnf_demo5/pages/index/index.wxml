@@ -1,0 +1,8 @@
+<view class='wrapper'>
+
+<view class='wrapper-item' data-id="1232" data-current='0' bindtap='bindClick'>1111111</view>
+<view class='wrapper-item' data-id="5" data-current='1' bindtap='bindClick'>2222222</view>
+<view class='wrapper-item' data-id="6" data-current='2' bindtap='bindClick'>3333333</view>
+<view class='wrapper-item' data-di="7" data-current='3' bindtap='bindClick'>4444444</view>
+
+</view>

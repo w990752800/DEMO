@@ -1,0 +1,38 @@
+
+.tab{ 
+
+  display: flex;
+  justify-content: space-between;
+  height:80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+
+
+.tab .tab-item{  
+  flex: 1;
+ border-bottom:1px solie #ddd; 
+
+}
+
+.active{  
+  color:red;
+}
+
+.loading{  
+  padding: 10rpx;  
+  text-align: center; 
+}  
+.loading:before{  
+  display: inline-block;  
+  margin-right: 5rpx;  
+  vertical-align: middle;  
+  content: '';  
+  width: 40rpx;  
+  height: 40rpx;  
+  animation: rotate 1s linear infinite;  
+}  
+.loading.complete:before{  
+  display: none;  
+} 

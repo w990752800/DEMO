@@ -1,0 +1,19 @@
+<view>
+  <view class='tab'>
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="bindClick">1</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="bindClick">2</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="bindClick">3</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="bindClick">4</view>
+  </view>
+  <view class='tabBody'>
+    <view class="tabBody-item">
+      <scroll-view style='height:100vh;' scroll-y="true" bindscrolltolower="searchScrollLower">
+        <view wx:for="{{pageList}}" wx:key="{{key}}" wx:if="{{pageList.length!=0}}">
+          <view>{{item.title}}</view>
+        </view>
+        <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+        <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
